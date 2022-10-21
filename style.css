@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: lavender;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+label,
+input,
+select,
+textarea {
+  display: block;
+  height: 30px;
+  width: 400px;
+  border: none;
+}
+select {
+  text-align: center;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+label {
+  margin: 30px;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 16px;
+}
+textarea {
+  height: 60px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.btn {
+  width: 300px;
+  height: 40px;
+  margin-top: 50px;
+  margin-left: 100px;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+

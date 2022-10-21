@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: lavender;
+        height: 100%;
+        align-items: center;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 700;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px dashed cadetblue;
+      }
+
+      table {
+        /* border-collapse: collapse; */
+        height: 300px;
+        width: 80%;
+      }
+
+      .table-container {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 600px;
+      }
+    </style>
+    <title>Lamp list</title>
+  </head>
+  <body>
+    <div class="table-container">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script>
+      var users = JSON.parse(localStorage.getItem("Users")) || [];
+
+      let table = document.querySelector("#tbody");
+      for (let user of users) {
+        let tr = table.insertRow();
+        tr.insertCell().textContent = user.Employee;
+        tr.insertCell().textContent = user.age;
+        tr.insertCell().textContent = user.gender;
+        tr.insertCell().textContent = user.department;
+        tr.insertCell().textContent = user.designation;
+        tr.insertCell().textContent = user.address;
+      }
+    </script>
+  </body>
+</html>

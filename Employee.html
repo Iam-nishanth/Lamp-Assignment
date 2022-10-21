@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lamp Assignment</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <label for="name">
+          Employee's Name<span>*</span> :
+          <input type="text" name="" id="name" />
+        </label>
+        <label for="age">
+          Age<span>*</span> :
+          <input type="number" name="" id="age" />
+        </label>
+        <label for="gender">
+          Gender<span>*</span> :
+          <select name="" id="gender">
+            <option value="none">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Can't Say">Can't say</option>
+          </select>
+        </label>
+        <label for="department">
+          Department<span>*</span> :
+          <input type="text" id="department" />
+        </label>
+        <label for="designation">
+          Designation<span>*</span> :
+          <input type="text" name="" id="designation" />
+        </label>
+        <label for="address">
+          Address<span>*</span> :
+          <textarea
+            name=""
+            id="address"
+            cols="30"
+            rows="10"
+            placeholder="please enter your address"
+          ></textarea>
+        </label>
+        <button onclick="readData()" class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function readData() {
+        var users = JSON.parse(localStorage.getItem("Users")) || [];
+        var userData = 
+          {
+            Employee: document.getElementById("name").value,
+            age: document.getElementById("age").value,
+            gender: document.getElementById("gender").value,
+            department: document.getElementById("department").value,
+            designation: document.getElementById("designation").value,
+            address: document.getElementById("address").value,
+          }
+        
+
+        users.push(userData);
+        localStorage.setItem("Users", JSON.stringify(users));
+        
+      }
+    </script>
+  </body>
+</html>
