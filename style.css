@@ -2,10 +2,55 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: lavender;
-  display: flex;
-  align-items: center;
+  background-color: #1b1b32;
+  color: #f5f6f7;
   font-family: "Courier New", Courier, monospace;
+}
+header{
+  margin-bottom: 50px;
+}
+
+nav{
+  background-color: #1b1b32;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(88, 88, 88, 0.25);
+}
+nav a{
+  cursor: pointer;
+  color: inherit;
+}
+nav a i{
+  color: #f5f6f7;
+}
+
+nav h1{
+  margin-left: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  color: inherit;
+  text-shadow: 2px 1px #999;
+}
+
+nav div{
+  margin-right: 50px;
+}
+nav div a{
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav div a:hover,i:hover{
+  color: gray;
+}
+label:first-child{
+  margin-top: 50px;
 }
 label,
 input,
@@ -15,6 +60,7 @@ textarea {
   height: 30px;
   width: 400px;
   border: none;
+  border-radius: 8px;
 }
 select {
   text-align: center;
@@ -22,9 +68,14 @@ select {
   font-size: 15px;
   font-weight: 700;
 }
-.container {
+form {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
   align-items: center;
   justify-content: center;
 }
@@ -32,7 +83,6 @@ label {
   margin: 30px;
   font-size: 16px;
   font-weight: 900;
-  padding: 16px;
 }
 textarea {
   height: 60px;
@@ -40,15 +90,68 @@ textarea {
   font-weight: 700;
   font-family: inherit;
 }
+input,select, textarea{
+  background-color: lightgrey;
+  text-align: center;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 700;
+}
 .btn {
   width: 300px;
   height: 40px;
-  margin-top: 50px;
-  margin-left: 100px;
+   margin-top: 50px;
+   background-color: aquamarine;
   border: none;
+  text-align: center;
   font-family: inherit;
   font-size: 16px;
   font-weight: 700;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 100px;
 }
 
-
+@media only screen and (max-width:450px) {
+  form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  label,
+  input,
+  select,
+  textarea,
+  .btn {
+    justify-content: center;
+    display: block;
+    height: 30px;
+    width: 80%;
+    border: none;
+  }
+  textarea{
+    font-size: small;
+  }
+  nav{
+    justify-content: space-around;
+  }
+  nav h1{
+    width: 20%;
+    height: auto;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  nav div a{
+    margin-right: 2px;
+    text-decoration: none;
+  }
+  nav div a:hover{
+    color: gray ;
+  }
+  nav div{
+    margin-right: 2px;
+  }
+}

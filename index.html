@@ -5,22 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Lamp Assignment</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <h1>Employee Detalils</h1>
+        <div>
+          <a href="/index.html"><i class="fas fa-home"></i><span> Home</span></a>
+          <a href="/list.html"><i class="fas fa-book"></i><span> List</span></a>
+          <a href="/edit.html"><i class="fas fa-pencil"></i><span> Edit</span></a>
+        </div>
+      </nav>
+    </header>
+
     <div class="container">
       <form action="">
         <label for="name">
-          Employee's Name<span>*</span> :
-          <input type="text" name="" id="name" />
+          &nbsp Employee's Name<span>*</span> :
+          <input type="text" name="" id="name"  required/>
         </label>
         <label for="age">
-          Age<span>*</span> :
-          <input type="number" name="" id="age" />
+          &nbsp Age<span>*</span> :
+          <input type="number" name="" id="age"  required/>
         </label>
         <label for="gender">
-          Gender<span>*</span> :
-          <select name="" id="gender">
+          &nbsp Gender<span>*</span> :
+          <select name="" id="gender" required>
             <option value="none">Select</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -28,21 +46,22 @@
           </select>
         </label>
         <label for="department">
-          Department<span>*</span> :
-          <input type="text" id="department" />
+          &nbsp Department<span>*</span> :
+          <input type="text" id="department"  required/>
         </label>
         <label for="designation">
-          Designation<span>*</span> :
-          <input type="text" name="" id="designation" />
+          &nbsp Designation<span>*</span> :
+          <input type="text" name="" id="designation"  required/>
         </label>
         <label for="address">
-          Address<span>*</span> :
+          &nbsp Address<span>*</span> :
           <textarea
             name=""
             id="address"
             cols="30"
             rows="10"
-            placeholder="please enter your address"
+            required
+            placeholder="please enter your address" 
           ></textarea>
         </label>
         <button onclick="readData()" class="btn" type="submit">Submit</button>
@@ -52,20 +71,17 @@
     <script>
       function readData() {
         var users = JSON.parse(localStorage.getItem("Users")) || [];
-        var userData = 
-          {
-            Employee: document.getElementById("name").value,
-            age: document.getElementById("age").value,
-            gender: document.getElementById("gender").value,
-            department: document.getElementById("department").value,
-            designation: document.getElementById("designation").value,
-            address: document.getElementById("address").value,
-          }
-        
+        var userData = {
+          Employee: document.getElementById("name").value,
+          age: document.getElementById("age").value,
+          gender: document.getElementById("gender").value,
+          department: document.getElementById("department").value,
+          designation: document.getElementById("designation").value,
+          address: document.getElementById("address").value,
+        };
 
         users.push(userData);
         localStorage.setItem("Users", JSON.stringify(users));
-        
       }
     </script>
   </body>

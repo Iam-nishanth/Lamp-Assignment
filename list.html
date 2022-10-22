@@ -4,38 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
     <style>
-      body {
-        background-color: lavender;
-        height: 100%;
-        align-items: center;
-        font-family: "Courier New", Courier, monospace;
-        font-weight: 700;
+      td{
+        color: #f5f6f7;
+        font-weight: 600;
+      }
+      th{
+        text-decoration: underline;
+        font-size: 1.2rem;
       }
 
+      th,td{
+        height: 40px;
+      }
       table,
       td,
       th {
-        border: 1px dashed cadetblue;
+        border: 1px dashed darkgray;
       }
 
       table {
         /* border-collapse: collapse; */
-        height: 300px;
+        height: aut0;
         width: 80%;
+        box-shadow: 0px 4px 4px rgba(169, 169, 200, 0.5);
+        overflow-x: auto;
       }
 
       .table-container {
+        margin-top: 100px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 600px;
+      }
+      @media only screen and (max-width:450px){
+        .table-container{
+          width: max-content;
+        }
       }
     </style>
     <title>Lamp list</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <h1>Employee Detalils</h1>
+        <div>
+          <a href="/index.html"><i class="fas fa-home"></i><span> Home</span></a>
+          <a href="/list.html"><i class="fas fa-book"></i><span> List</span></a>
+          <a href="/edit.html"><i class="fas fa-pencil"></i><span> Edit</span></a>
+        </div>
+      </nav>
+    </header>
     <div class="table-container">
       <table id="table">
         <thead>
